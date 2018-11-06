@@ -70,8 +70,8 @@ def calculate_yearly():
     return (interests,tilgung,extra)
     
 def calculate_fixed_years():
-    output_line = '{:>6s} | {:>15s} {:>15s} {:>15s} | {:>15s} | {:>15s}'
-    data_output_line = '{:>6d} | {:>15.2f} {:>15.2f} {:>15.2f} | {:>15.2f} | {:>15.2f}'
+    output_line = '{:>5s} | {:>11s} {:>11s} {:>11s} | {:>11s} | {:>11s}'
+    data_output_line = '{:>5d} | {:>11.2f} {:>11.2f} {:>11.2f} | {:>11.2f} | {:>11.2f}'
     print('\n---')
     print(output_line.format('Year','Pay/month','Reimb/month','Inter/month','Irreg reimb','Rest debt'))
     print('-'*len(output_line.format(' ',' ',' ',' ',' ',' ')))
