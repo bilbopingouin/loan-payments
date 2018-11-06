@@ -12,7 +12,7 @@ Simply run
     
 which would provide something like
 
-    $ python calculate_debt.py                                                                                                                                                                       
+    $ python calculate_debt.py
     Enter debt [1] or calculate debt [2]? Please enter 1 or 2: 
     Please enter the choice: 2
     Please enter the price: 300000
