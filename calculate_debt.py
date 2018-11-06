@@ -7,25 +7,21 @@ data = {'current debt': 0, 'current year': 0}
 def get_value(name):
     vfloat = 0.0
     while True:
-        #print('Please enter the '+value+':',end=' ')
         print'Please enter the '+name+':',
         v_raw = input()
         try:
             vfloat = float(v_raw)
         except:
             print('Format not understood')
-            #print'Format not understood'
         else:
             if vfloat >= 0:
                 break
             else:
                 print('Numbers should be positive')
-                #print'Numbers should be positive'
     return vfloat
  
 
 def get_inputs():
-    #list_values = ['original debt','interest rate','monthly paiement','fixed years','yearly extra transfer']
     list_values = ['interest rate','monthly paiement','fixed years','yearly extra transfer']
 
     print('Enter debt [1] or calculate debt [2]? Please enter 1 or 2: ')
@@ -48,10 +44,8 @@ def get_inputs():
     
 def print_data():
     print('\n---\nCurrent status:')
-    #print'\n---\nCurrent status:'
     for name,value in data.items():
-        print(' '+name+': '+str('%.2f' % value))
-        #print' '+name+': '+str('%.2f' % value)
+        print(' {:<24s}: {:>10.2f}'.format(name,value))
 
 def calculate_yearly():
     data['current year'] += 1
@@ -79,14 +73,11 @@ def calculate_fixed_years():
     output_line = '{:>6s} | {:>15s} {:>15s} {:>15s} | {:>15s} | {:>15s}'
     data_output_line = '{:>6d} | {:>15.2f} {:>15.2f} {:>15.2f} | {:>15.2f} | {:>15.2f}'
     print('\n---')
-    #print('Year\t| Pay/month\tReimb/month\tInterests/month\t| Irregular reimb\t| Rest debt')
     print(output_line.format('Year','Pay/month','Reimb/month','Inter/month','Irreg reimb','Rest debt'))
     print('-'*len(output_line.format(' ',' ',' ',' ',' ',' ')))
     for y in range(int(data['fixed years'])):
         i,t,e = calculate_yearly()
         print(data_output_line.format(data['current year'],(t+i)/12.0,t/12.0,i/12.0,e,data['current debt']))
-        #print(data_output_line.format(data['current year'],(t+i)/12.0),t/12.0,i/12.0,e,data['current debt'])
-        #print(str('%2d' % data['current year'])+'\t| '+str('%4.2f' % ((t+i)/12.0))+'\t'+str('%4.2f' % (t/12.0))+'\t\t'+str('%4.2f' % (i/12.0))+'\t\t| '+str('%5.2f' % e)+'\t\t| '+str('%.2f' % data['current debt']))
 
 if __name__ == '__main__':
     get_inputs()
