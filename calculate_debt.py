@@ -7,7 +7,7 @@ data = {'current debt': 0, 'current year': 0}
 def get_value(name):
     vfloat = 0.0
     while True:
-        print'Please enter the '+name+':',
+        print('Please enter the '+name+':', end=' ')
         v_raw = input()
         try:
             vfloat = float(v_raw)

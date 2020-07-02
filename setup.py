@@ -9,8 +9,6 @@ import py2exe
 #--------------------------------
 
 def generate_exe():
-    global target_script
-
     py2exe_options =    {
                             'bundle_files':1,
                             'compressed': True,
