@@ -11,7 +11,7 @@ def get_value(name):
         v_raw = input()
         try:
             vfloat = float(v_raw)
-        except:
+        except ValueError:
             print('Format not understood')
         else:
             if vfloat >= 0:
@@ -91,5 +91,5 @@ if __name__ == '__main__':
     print('\nPress enter...')
     try:
         input()
-    except:
-        pass
+    except EOFError:
+        print('Done.')
